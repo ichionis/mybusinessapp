@@ -1,8 +1,8 @@
-package com.sample;
+package org.kie.businessapp;
 
 dialect "mvel"
 
-import com.sample.PersonPojo
+import org.kie.businessapp.PersonPojo
 import java.util.Date
 import java.sql.Connection
 import java.sql.DriverManager

@@ -1,4 +1,4 @@
-package com.sample;
+package org.kie.businessapp;
 
 public class PersonPojo {
    private String name;

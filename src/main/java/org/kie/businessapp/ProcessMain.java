@@ -1,7 +1,6 @@
-package com.sample;
+package org.kie.businessapp;
 
 import java.io.File;
-import java.util.Date;
 
 import org.kie.api.KieServices;
 import org.kie.api.builder.KieBuilder;
@@ -20,7 +19,7 @@ public class ProcessMain {
 	KieServices kieServices = KieServices.Factory.get();
 	KieFileSystem kfs = kieServices.newKieFileSystem();
 
-	file = loadFile("DBConnection.drl");
+	file = loadFile("table.drl");
 	resource = kieServices.getResources().newFileSystemResource(file).setResourceType(ResourceType.DRL);
 	kfs.write(resource);
 
