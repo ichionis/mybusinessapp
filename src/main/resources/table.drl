@@ -20,6 +20,7 @@ function String ConnectDB(String ConnectionClass,String url,String user, String 
     //Executing SQL query and fetching the result
     //Statement st = con.createStatement();
 
+    //Create scrollable ResultSet
     Statement st = con.createStatement(
         ResultSet.TYPE_SCROLL_INSENSITIVE,
         ResultSet.CONCUR_READ_ONLY
@@ -36,7 +37,7 @@ function String ConnectDB(String ConnectionClass,String url,String user, String 
    
 rule "DBConnection" 
  when
-      $person:PersonPojo(name == ConnectDB("net.sourceforge.jtds.jdbc.Driver","jdbc:jtds:sqlserver://localhost:1433;databaseName=Drools","drools_user","606612Ioannina!!"))
+      $person:PersonPojo('Smith' == ConnectDB("net.sourceforge.jtds.jdbc.Driver","jdbc:jtds:sqlserver://localhost:1433;databaseName=Drools","drools_user","606612Ioannina!!"))
 
       //$person:PersonPojo(name == ConnectDB("com.microsoft.sqlserver.jdbc.SQLServerDriver","jdbc:sqlserver://localhost:1433;databaseName=Drools","drools_user","606612Ioannina!!"))
  then
