@@ -18,7 +18,13 @@ function String ConnectDB(String ConnectionClass,String url,String user, String 
     java.sql.Connection con = DriverManager.getConnection(url, user, password);
 
     //Executing SQL query and fetching the result
-    Statement st = con.createStatement();
+    //Statement st = con.createStatement();
+
+    Statement st = con.createStatement(
+        ResultSet.TYPE_SCROLL_INSENSITIVE,
+        ResultSet.CONCUR_READ_ONLY
+    );
+
     ResultSet rs = st.executeQuery("select FirstName from dbo.Persons where FirstName = 'Smith'");
 
     rs.first();
